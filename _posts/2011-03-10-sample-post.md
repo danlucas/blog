@@ -4,7 +4,7 @@ title: Sample Post
 description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
 modified: 2013-05-31
 tags: [sample post]
-published: true
+published: false
 ---
 
 Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
@@ -76,7 +76,7 @@ HTML and <abbr title="cascading stylesheets">CSS<abbr> are our tools. Mauris a a
 
 ## Code Snippets
 
-Syntax highlighting via Pygments
+Syntax highlighting via <strike>Pygments</strike> Prism
 
 {% highlight css %}
 #container {
@@ -91,17 +91,21 @@ Non Pygments code example
     <div id="awesome">
         <p>This is great isn't it?</p>
     </div>
-    
+
 ### Prism code highlighting
 
-This site will override the jekyll deafaults and use a different syntax highlighter
+This site overrides the pygment styles default and uses prism instead.  To use line number highlights, you'll have to write the code yourself.
+Unfortunately, I cannot use the prism jekyll plugin because I'm using github pages to automatically generate the site.  I'll change that in the future.
+
+<pre data-line="1"><code class="language-javascript">var hw = 'hello world!';</code></pre>
 
 {% prism javascript %}
-var hw = 'hello world!';
+for (var i = 0, len = somearray.length; i < len; i++) {
+  console.log(somearray[i]);
+}
 {% endprism %}
 
-
-{% prism css linenos=4 %}
+{% prism css %}
 * {
   margin: 0;
   padding: 0;
