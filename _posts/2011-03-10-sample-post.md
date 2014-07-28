@@ -4,7 +4,7 @@ title: Sample Post
 description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
 modified: 2013-05-31
 tags: [sample post]
-published: false
+published: true
 ---
 
 Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
@@ -91,7 +91,50 @@ Non Pygments code example
     <div id="awesome">
         <p>This is great isn't it?</p>
     </div>
+    
+### Prism code highlighting
 
+This site will override the jekyll deafaults and use a different syntax highlighter
+
+{% prism javascript %}
+var hw = 'hello world!';
+{% endprism %}
+
+
+{% prism css linenos=4 %}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  background-color: #fdfdfd;
+}
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+
+a         { color: #2a7ae2; text-decoration: none; }
+a:hover   { color: #000; text-decoration: underline; }
+a:visited { color: #205caa; }
+
+/* Utility */
+
+.wrap:before,
+.wrap:after { content:""; display:table; }
+.wrap:after { clear: both; }
+.wrap {
+  max-width: 800px;
+  padding: 0 30px;
+  margin: 0 auto;
+  zoom: 1;
+}
+{% endprism %}
 ## Buttons
 
 Make any link standout more when applying the `.btn` class.
