@@ -10,3 +10,14 @@ github_username:  danlucas
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Rake config
+post:
+    template: post.html
+    extension: md
+page:
+    template: page.html
+    extension: md
+git:
+    branch: master
+editor: subl
