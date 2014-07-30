@@ -189,16 +189,17 @@ task :deploy, :message do |t, args|
   message = args[:message]
   branch = CONFIG["git"]["branch"]
   if message.nil? or message.empty?
-    message = "Updated on #{DATE}"
+    message = "Site updated at #{Time.now.utc}"
   end
   if branch.nil? or branch.empty?
     raise "Please add a branch."
   else
     Rake::Task[:build].invoke
-    execute("cd _site")
-    execute("git add .")
-    execute("git commit -m \"#{message}\"")
-    execute("git push origin #{branch}")
+    cd "_site" do
+      execute("git add --all .")
+      execute("git commit -m \"#{message}\"")
+      execute("git push origin #{branch}")
+    end
   end
 end
 

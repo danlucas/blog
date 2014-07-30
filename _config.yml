@@ -10,10 +10,11 @@ github_username:  danlucas
 # Build settings
 markdown: kramdown
 permalink: pretty
+exclude: [Rakefile]
 
 # Rake config
 post:
-    template: post.html
+    template: _layouts/post.html
     extension: md
 page:
     template: page.html
