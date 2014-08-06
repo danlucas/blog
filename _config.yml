@@ -22,3 +22,11 @@ page:
 git:
     branch: master
 editor: subl
+
+# collections
+collections:
+    practice:
+        output: true
+        title: "Practice"
+    mocks:
+        output: true
